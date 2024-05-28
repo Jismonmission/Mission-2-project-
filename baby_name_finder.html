@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Baby Name Finder</title>
+    <link rel="stylesheet" type="text/css" href="baby_name_finder.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="mainPage" style="background-color: white">
+      <div class="header">
+        <h1>BABY NAME FINDER</h1>
+      </div>
+
+      <!-- Header contents  -->
+
+      <div class="ul_content">
+        <ul>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">A-D</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">E-H</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">I-L</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">M-P</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">Q-T</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">U-X</a>
+          </li>
+          <li class="StartingLetter">
+            <a href="https://www.thebump.com/b/cute-baby-names">Y-Z</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="middleImage">
+        <h2>Find your child name</h2>
+        <br />
+        <form method="post">
+          <label>Select the Gender </label>
+          <select id="gender">
+            <option value="All_gender">All Gender</option>
+            <option value="boy">boy</option>
+            <option value="girl">girl</option>
+          </select>
+          <input
+            type="button"
+            value="Generate"
+            onclick="displayNames()"
+            id="genderBttn"
+          />
+          <br />
+
+          <label>Letter Starting with </label> <br />
+          <select name="firstLetter" id="firstLetter">
+            <option value="any_letter">any Letter</option>
+            <option value="a-j">a-j</option>
+            <option value="k-o">k-o</option>
+            <option value="p-u">p-u</option>
+            <option value="v-z">v-z</option>
+          </select>
+          <input
+            type="button"
+            value="Generate"
+            onclick="displayNames()"
+            id="firstLetterBttn"
+          />
+          <br />
+
+          <label>Select the orgin </label> <br />
+          <select name="Orgin" id="orgin">
+            <option value="any">any</option>
+            <option value="Indian">Indian</option>
+            <option value="Euopean">Euopean</option>
+            <option value="Maori">Maori</option>
+          </select>
+          <input
+            type="button"
+            value="Generate"
+            onclick="displayNames()"
+            id="name_bttn"
+          />
+          <br />
+        </form>
+      </div>
+
+      <div class="leftImage">
+        <div id="boy_text">Baby Boy</div>
+        <img src="Boy Baby.webp" class="Boy_Baby" id="image2" />
+        <p id="displayBoyName"></p>
+      </div>
+
+      <div class="rightImage">
+        <div id="Girl_text">Baby Girl</div>
+        <img src="Girl Baby.webp" class="Girl_Baby" id="test" />
+        <div class="test_overlay">
+          <p id="displayName"></p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="lower">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div>
+
+      <div class="footer">
+        <p>This Website Belongs to Jismon</p>
+      </div>
+    </div>
+  </body>
+</html>
