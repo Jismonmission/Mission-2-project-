@@ -8,6 +8,7 @@ const displayGirlNameEl = document.getElementById("displayName"); //need update 
 const displayBoyNameEl = document.getElementById("displayBoyName");
 const genderEl = document.getElementById("gender");
 const firstLetterEl = document.getElementById("firstLetter");
+const endUserNamesEl = document.getElementById("endUserNames");
 
 const boyNameArray = [
   "Noah",
@@ -42,6 +43,7 @@ const filteredBoysArray = [];
 
 function diplayBoyNames() {
   boyImgEl.style.opacity = 0.3;
+  displayBoyNameEl.innerHTML = "";
 
   for (const item of boyNameArray) {
     displayBoyNameEl.innerHTML = displayBoyNameEl.innerHTML + "<br>" + item;
@@ -50,6 +52,8 @@ function diplayBoyNames() {
 
 function displayGirlNames() {
   girlImgEl.style.opacity = 0.3;
+
+  displayGirlNameEl.innerHTML = "";
 
   for (const item of girlNameArray) {
     displayGirlNameEl.innerHTML = displayGirlNameEl.innerHTML + "<br>" + item;
@@ -102,6 +106,17 @@ function firstLetterFn() {
     diplayBoyNames();
     displayGirlNames();
   }
+}
+
+function addNamefn(gender) {
+  console.log("function is working ");
+  endUserNamesEl.innerHTML = "";
+
+  if (gender == "boy") {
+    boyNameArray.push(endUserNamesEl.value);
+    diplayBoyNames();
+  } else girlNameArray.push(endUserNamesEl.value);
+  displayGirlNames();
 }
 
 const Babyboy_eve = document.getElementById("boy_text");
