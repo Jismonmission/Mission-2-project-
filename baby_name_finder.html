@@ -41,15 +41,17 @@
       </div>
 
       <div class="middleImage">
-        <h2>Find your child name</h2>
+        <h2>Generate Names</h2>
         <br />
         <form method="post">
-          <label>Select the Gender </label>
+          <label>Select the Gender </label> <br />
           <select id="gender">
             <option value="All_gender">All Gender</option>
             <option value="boy">boy</option>
             <option value="girl">girl</option>
           </select>
+          <br />
+          <br />
           <input
             type="button"
             value="Generate"
@@ -57,55 +59,65 @@
             id="genderBttn"
           />
           <br />
+          <br />
 
           <label>Letter Starting with </label> <br />
           <select name="firstLetter" id="firstLetter">
-            <option value="any_letter">any Letter</option>
-            <option value="a-j">a-j</option>
-            <option value="k-o">k-o</option>
-            <option value="p-u">p-u</option>
-            <option value="v-z">v-z</option>
+            <option value="any_letter">Any Letter</option>
+            <option value="A-O">A-O</option>
+            <option value="P-Z">P-Z</option>
           </select>
+          <br />
+          <br />
           <input
             type="button"
             value="Generate"
-            onclick="displayNames()"
+            onclick="firstLetterFn()"
             id="firstLetterBttn"
           />
           <br />
 
-          <label>Select the orgin </label> <br />
-          <select name="Orgin" id="orgin">
-            <option value="any">any</option>
-            <option value="Indian">Indian</option>
-            <option value="Euopean">Euopean</option>
-            <option value="Maori">Maori</option>
-          </select>
+          <h2>Help us to with new names</h2>
+
           <input
-            type="button"
-            value="Generate"
-            onclick="displayNames()"
-            id="name_bttn"
+            type="text"
+            placeholder="Name eg.Sam"
+            id="textInput"
+            name="inputText"
           />
           <br />
+          <br />
+          <input
+            type="button"
+            value="Add boy name"
+            onclick=""
+            id="addGirlBttn"
+          />
+          <input
+            type="button"
+            value="Add Girl name"
+            onclick=""
+            id="addGirlBttn"
+          />
         </form>
       </div>
 
       <div class="leftImage">
         <div id="boy_text">Baby Boy</div>
         <img src="Boy Baby.webp" class="Boy_Baby" id="image2" />
-        <p id="displayBoyName"></p>
+        <div class="overlay">
+          <p id="displayBoyName"></p>
+        </div>
       </div>
 
       <div class="rightImage">
         <div id="Girl_text">Baby Girl</div>
-        <img src="Girl Baby.webp" class="Girl_Baby" id="test" />
-        <div class="test_overlay">
+        <img src="Girl Baby.webp" alt="image" class="Girl_Baby" id="girlImg" />
+        <!-- <div class="girl_overlay"> -->
+        <div class="overlay">
           <p id="displayName"></p>
         </div>
       </div>
-
-      <br />
 
       <div class="lower">
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>

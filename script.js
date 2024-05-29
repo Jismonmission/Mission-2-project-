@@ -1,12 +1,13 @@
 console.log("We are connected ");
 const genderSelectEl = document.getElementById("gender");
 const startLetterEl = document.getElementById("firstLetter");
-const orginEl = document.getElementById("orgin");
-const imgEl = document.getElementById("test");
+const orginEl = document.getElementById("girlImg");
+const girlImgEl = document.getElementById("girlImg");
 const boyImgEl = document.getElementById("image2");
 const displayGirlNameEl = document.getElementById("displayName"); //need update to girl name function
 const displayBoyNameEl = document.getElementById("displayBoyName");
 const genderEl = document.getElementById("gender");
+const firstLetterEl = document.getElementById("firstLetter");
 
 const boyNameArray = [
   "Noah",
@@ -32,6 +33,7 @@ const girlNameArray = [
   "Hannah",
   "Abigail",
 ];
+const filteredBoysArray = [];
 
 // if (genderEl.innerText == "Boy") {
 
@@ -39,14 +41,15 @@ const girlNameArray = [
 // }
 
 function diplayBoyNames() {
-  boyImgEl.style.visibility = "hidden";
+  boyImgEl.style.opacity = 0.3;
+
   for (const item of boyNameArray) {
     displayBoyNameEl.innerHTML = displayBoyNameEl.innerHTML + "<br>" + item;
   }
 }
 
 function displayGirlNames() {
-  imgEl.style.visibility = "hidden";
+  girlImgEl.style.opacity = 0.3;
 
   for (const item of girlNameArray) {
     displayGirlNameEl.innerHTML = displayGirlNameEl.innerHTML + "<br>" + item;
@@ -61,10 +64,41 @@ function displayNames() {
   // alert(genderEl.options[genderEl.selectedIndex].value);
   if (genderEl.value == "boy") {
     diplayBoyNames();
+    girlImgEl.style.opacity = 1;
   } else if (genderEl.value == "girl") {
     displayGirlNames();
+    boyImgEl.style.opacity = 1;
   } else if (genderEl.value == "All_gender") {
     displayBoyNameEl.innerHTML = "";
+    diplayBoyNames();
+    displayGirlNames();
+  }
+}
+
+function firstLetterFn() {
+  displayBoyNameEl.innerHTML = "";
+  displayGirlNameEl.innerHTML = "";
+  if (firstLetterEl.value == "A-O") {
+    const letters = /^[a-lA-L]/;
+    boyImgEl.style.opacity = 0.3;
+    girlImgEl.style.opacity = 0.3;
+    displayBoyNameEl.innerHTML = boyNameArray.filter((str) =>
+      letters.test(str)
+    );
+    displayGirlNameEl.innerHTML = girlNameArray.filter((str) =>
+      letters.test(str)
+    );
+  } else if (firstLetterEl.value == "P-Z") {
+    const letters = /^[p-zP-Z]/;
+    boyImgEl.style.opacity = 0.3;
+    girlImgEl.style.opacity = 0.3;
+    displayBoyNameEl.innerHTML = boyNameArray.filter((str) =>
+      letters.test(str)
+    );
+    displayGirlNameEl.innerHTML = girlNameArray.filter((str) =>
+      letters.test(str)
+    );
+  } else {
     diplayBoyNames();
     displayGirlNames();
   }

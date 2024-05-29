@@ -50,7 +50,18 @@
   grid-area: leftImage;
   height: fit-content;
   width: fit-content;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
+}
+/* Style the right column */
+.rightImage {
+  grid-area: rightImage;
+  height: fit-content;
+  width: fit-content;
+  /* overflow: hidden; */
+
+  position: relative;
+  /* display: inline-block; */
 }
 
 /* Style the middle column */
@@ -62,13 +73,6 @@
   padding: 10px 10px;
 }
 
-/* Style the right column */
-.rightImage {
-  grid-area: rightImage;
-  height: fit-content;
-  width: fit-content;
-  overflow: hidden;
-}
 .lower {
   grid-area: lower;
   width: 100%;
@@ -100,12 +104,17 @@
 @media (max-width: 600px) {
   .grid-container {
     grid-template-areas:
-      "header header header header header header"
-      "ul_content ul_content ul_content ul_content ul_content ul_content"
-      "left left left left left left"
-      "middle middle middle middle middle middle"
-      "right right right right right right"
-      "footer footer footer footer footer footer";
+      " header header header header header"
+      " ul_content ul_content ul_content ul_content ul_content"
+      "leftImage leftImage middleImage  rightImage rightImage"
+      "leftImage leftImage middleImage  rightImage rightImage"
+      "leftImage leftImage middleImage  rightImage rightImage"
+      "lower lower lower  lower lower"
+      "lower lower lower  lower lower"
+      "lower lower lower  lower lower"
+      "footer footer footer  footer footer";
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
   }
 }
 
@@ -138,6 +147,14 @@ ul {
 #name_bttn,
 #genderBttn,
 #firstLetterBttn {
+  background-color: #04aa6d;
+  color: white;
+  font-size: 12px;
+  padding: 12px 12px;
+  align-items: center;
+}
+#addGirlBttn,
+#addBoyBttn{
   background-color: #04aa6d;
   color: white;
   font-size: 12px;
@@ -177,6 +194,7 @@ select {
   margin: 8px 0;
   box-sizing: border-box;
 } */
+
 img,
 iframe {
   border: 1px solid #ddd;
@@ -202,7 +220,7 @@ p {
 }
 
 /* test text overlay  working */
-.test_overlay {
+/* .boy_overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -210,5 +228,18 @@ p {
   color: #fff;
   padding: 10px 20px;
   font-size: 20px;
+  text-align: center;
+} */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+}
+form{
   text-align: center;
 }
