@@ -1,24 +1,17 @@
 /* The grid container */
 .mainPage {
   display: grid;
-  overflow: auto;
+  /* overflow: auto; */
   /* max-width: auto;
   max-height: auto; */
-  height: fit-content;
-  width: fit-content;
   grid-template-areas:
-    " header header header header header"
-    " ul_content ul_content ul_content ul_content ul_content"
-    "leftImage leftImage middleImage  rightImage rightImage"
-    "leftImage leftImage middleImage  rightImage rightImage"
-    "leftImage leftImage middleImage  rightImage rightImage"
-    "lower lower lower  lower lower"
-    "lower lower lower  lower lower"
-    "lower lower lower  lower lower"
-    "footer footer footer  footer footer";
-  grid-template-rows: auto auto auto auto auto;
-  grid-template-columns: auto auto auto auto auto;
-  /* grid-column-gap: 10px; - if you want gap between the columns */
+    "header header header "
+    "ul_content ul_content ul_content"
+    "leftImage  middleImage rightImage "
+    "lower lower lower"
+    "footer footer footer";
+  grid-template-rows: 1fr 0.3fr 3fr 2fr 1fr;
+  grid-template-columns: auto auto auto;
 }
 /* CSS code only for only main heading  */
 .header > h1 {
@@ -101,20 +94,17 @@
 
 /* Need to update this template layout */
 
-@media (max-width: 600px) {
-  .grid-container {
+@media (max-width: 800px) {
+  .mainPage {
+    grid-template-rows: 1fr 1fr 3fr 3fr 3fr 2fr 1fr;
     grid-template-areas:
-      " header header header header header"
-      " ul_content ul_content ul_content ul_content ul_content"
-      "leftImage leftImage middleImage  rightImage rightImage"
-      "leftImage leftImage middleImage  rightImage rightImage"
-      "leftImage leftImage middleImage  rightImage rightImage"
-      "lower lower lower  lower lower"
-      "lower lower lower  lower lower"
-      "lower lower lower  lower lower"
-      "footer footer footer  footer footer";
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: auto auto auto auto auto;
+      "header"
+      "ul_content"
+      "leftImage"
+      "middleImage"
+      "rightImage"
+      "lower"
+      "footer";
   }
 }
 
@@ -154,7 +144,7 @@ ul {
   align-items: center;
 }
 #addGirlBttn,
-#addBoyBttn{
+#addBoyBttn {
   background-color: #04aa6d;
   color: white;
   font-size: 12px;
@@ -240,6 +230,6 @@ p {
   font-size: 20px;
   text-align: center;
 }
-form{
+form {
   text-align: center;
 }
